@@ -1,15 +1,32 @@
 package com.example.unittetsingproject.utils
 
+import org.junit.After
 import org.junit.Assert.*
+import org.junit.Before
 
 import org.junit.Test
 
 class HelperTest {
 
+    lateinit var helper: Helper
+
+    @Before
+    fun setUp() {
+        //Arrange
+        helper = Helper()
+        println("Before Every Test case")
+    }
+
+    @After
+    fun tearDown() {
+     println("After Every Test case")
+    }
+
+
+
+
     @Test
     fun isPallidrome() {
-        //Arrange
-        var helper = Helper()
 
         //Act
         val result = helper.isPallidrome("hello")
@@ -21,7 +38,6 @@ class HelperTest {
 
     @Test
     fun isPallidrome_inputString_lever_expectedTrue() {
-        var helper = Helper()
         val result = helper.isPallidrome("level")
         assertEquals(true, result)
     }
