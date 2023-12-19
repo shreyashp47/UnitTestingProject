@@ -31,7 +31,7 @@ class MainActivity : AppCompatActivity() {
 
     fun setQuote(quote: Quote) {
         quoteText.text = quote.text
-        quoteAuthor.setText(quote.author)
+        //quoteAuthor.setText(quote.author)
     }
 
     fun onPrevious(view: View) {
@@ -39,7 +39,7 @@ class MainActivity : AppCompatActivity() {
         //setQuote(mainViewModel.previousQuote())
         //notSecondActivity()
         val intent = Intent(this, SecondActivity::class.java)
-        intent.putExtra("quote",quoteText.text.toString())
+        intent.putExtra("quote",quoteAuthor.text.toString())
         startActivity(intent)
     }
 
