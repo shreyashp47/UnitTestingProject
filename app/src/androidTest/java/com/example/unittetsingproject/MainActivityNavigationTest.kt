@@ -3,6 +3,7 @@ package com.example.unittetsingproject
 import androidx.test.espresso.Espresso
 import androidx.test.espresso.Espresso.*
 import androidx.test.espresso.action.ViewActions
+import androidx.test.espresso.action.ViewActions.closeSoftKeyboard
 import androidx.test.espresso.action.ViewActions.typeText
 import androidx.test.espresso.assertion.ViewAssertions
 import androidx.test.espresso.assertion.ViewAssertions.matches
@@ -22,7 +23,7 @@ class MainActivityNavigationTest {
     @Test
     fun testSubmitButton(){
 
-        onView(withId(R.id.quoteAuthor)).perform(typeText("test"))
+        onView(withId(R.id.quoteAuthor)).perform(typeText("test"), closeSoftKeyboard())
         onView(withId(R.id.btnPrevios)).perform(ViewActions.click())
 
         onView(withId(R.id.msg)).check(matches(withText("test")))
