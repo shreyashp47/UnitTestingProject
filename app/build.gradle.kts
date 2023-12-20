@@ -1,6 +1,8 @@
 plugins {
     id("com.android.application")
     id("org.jetbrains.kotlin.android")
+    id("kotlin-android")
+    id("kotlin-kapt")
 }
 
 android {
@@ -58,4 +60,21 @@ dependencies {
     androidTestImplementation("androidx.test.ext:junit:1.1.5")
     androidTestImplementation("androidx.test.ext:junit-ktx:1.1.5")
     androidTestImplementation("androidx.test:runner:1.5.2")
+
+
+    //room dependencies for testing
+    testImplementation("androidx.room:room-testing:2.5.1")
+    androidTestImplementation("androidx.room:room-testing:2.5.1")
+
+    //room dependencies
+    implementation("androidx.room:room-runtime:2.5.1")
+    annotationProcessor("androidx.room:room-compiler:2.5.1")
+    kapt("androidx.room:room-compiler:2.5.1")
+
+    //android architecture testing
+    implementation("androidx.arch.core:core-testing:2.2.0")
+    androidTestImplementation("androidx.arch.core:core-testing:2.2.0")
+
+
+
 }
